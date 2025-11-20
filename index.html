@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qubit Technologies LLC - Software Solutions</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            color: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            height: auto;
+            justify-content: flex-start;
+        }
+
+        .logo img {
+            height: 55px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-text {
+            display: inline;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #001A4D;
+        }
+
+
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #1E90FF;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #FFD700 0%, #1E90FF 50%, #001A4D 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #FFD700;
+            color: #001A4D;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #FFD700;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: #FFC700;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            margin-left: 1rem;
+        }
+
+        .cta-button-secondary:hover {
+            background: white;
+            color: #1E90FF;
+        }
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            scroll-margin-top: 60px;
+        }
+
+        #products {
+            scroll-margin-top: 60px;
+        }
+
+        #services {
+            scroll-margin-top: 60px;
+        }
+
+        #about {
+            scroll-margin-top: 60px;
+        }
+
+        #contact {
+            scroll-margin-top: 60px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #001A4D;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid #1E90FF;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(30, 144, 255, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1E90FF;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .products-section {
+            background: #f8fafc;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid #FFD700;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .product-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #001A4D;
+        }
+
+        .product-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1E90FF;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .about-section {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #001A4D;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .features-list {
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            color: #1E90FF;
+            font-weight: bold;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #FFD700 0%, #1E90FF 100%);
+            border-radius: 12px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1E90FF;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #001A4D;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .contact-section {
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h4 {
+            color: #1E90FF;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-card a {
+            color: #1E90FF;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+                padding: 0 1rem;
+            }
+
+            .logo {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+                font-size: 0.85rem;
+                justify-content: center;
+                width: 100%;
+            }
+
+            nav a {
+                padding: 0.5rem 0.75rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-button-secondary {
+                display: block;
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            #products {
+                scroll-margin-top: 120px;
+            }
+
+            #services {
+                scroll-margin-top: 120px;
+            }
+
+            #about {
+                scroll-margin-top: 120px;
+            }
+
+            #contact {
+                scroll-margin-top: 120px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .services-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card,
+            .product-card {
+                padding: 1.5rem;
+            }
+
+            .service-icon,
+            .product-icon {
+                font-size: 2rem;
+            }
+
+            .service-card h3,
+            .product-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .product-number {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .about-image {
+                height: 250px;
+                font-size: 3rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 1.5rem;
+            }
+
+            footer {
+                padding: 1.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 0.5rem 0;
+            }
+
+            nav {
+                padding: 0 0.5rem;
+            }
+
+            .logo img {
+                height: 45px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 0.25rem;
+                font-size: 0.75rem;
+            }
+
+            nav a {
+                padding: 0.3rem 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+                margin: 0.3rem;
+                display: block;
+                width: 90%;
+                text-align: center;
+            }
+
+            .cta-button-secondary {
+                display: block;
+                width: 90%;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .product-number {
+                font-size: 1.8rem;
+            }
+
+            .feature-item {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Qubit Technologies LLC" class="logo-img">
+                <span class="logo-text">Qubit Technologies LLC</span>
+            </div>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Quantum Leap in Technology</h1>
+            <p>Transform your vision into reality with cutting-edge mobile apps, intelligent AI solutions, and enterprise SaaS platforms</p>
+            <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+            <button class="cta-button cta-button-secondary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Learn More</button>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2>Our Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🎯</div>
+                <div class="product-number">15+</div>
+                <h3>Products Delivered</h3>
+                <p>Successful deliveries across diverse industries and platforms</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">👥</div>
+                <h3>Team Members</h3>
+                <p>Expert developers, engineers, and consultants</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">⭐</div>
+                <div class="product-number">100%</div>
+                <h3>Client Satisfaction</h3>
+                <p>Committed to excellence in every project</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Mobile App Development</h3>
+                <p>Native Android and iOS applications built with the latest technologies, delivering seamless user experiences and powerful performance across all devices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3>SaaS Solutions</h3>
+                <p>Scalable, cloud-based software platforms designed to streamline your business operations and drive growth with enterprise-grade reliability.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>AI Applications</h3>
+                <p>Intelligent solutions powered by machine learning and artificial intelligence to automate processes, enhance decision-making, and unlock new opportunities.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>IT Consulting</h3>
+                <p>Strategic technology consulting to optimize your digital infrastructure, improve efficiency, and align technology with your business goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Qubit Technologies</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Innovation Meets Expertise</h3>
+                <p>At Qubit Technologies LLC, we believe in the power of innovation to transform businesses. Our team of experienced developers, engineers, and consultants work collaboratively to deliver solutions that exceed expectations.</p>
+                <p>We combine cutting-edge technology with deep industry knowledge to create applications and platforms that drive real business value.</p>
+                <div class="features-list">
+                    <div class="feature-item">Expert team with years of development experience</div>
+                    <div class="feature-item">Cutting-edge technology and best practices</div>
+                    <div class="feature-item">Custom solutions tailored to your needs</div>
+                    <div class="feature-item">Agile development methodology</div>
+                </div>
+            </div>
+            <div class="about-image">⚡</div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+        <p>Ready to start your next project or like to share feedback? We'd love to hear from you.</p>
+        <div class="contact-info">
+            <div class="contact-card">
+                <h4>📧 Email</h4>
+                <p><a href="mailto:contact@qubittechs.com">contact@qubittechs.com</a></p>
+            </div>
+            <div class="contact-card">
+                <h4>📞 Phone</h4>
+                <p><a href="tel:+1-408-780-8007">+1 (408) 780-8007</a></p>
+            </div>
+            <div class="contact-card">
+                <h4>📍 Location</h4>
+                <p>Fremont, CA 94555</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Qubit Technologies LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>
